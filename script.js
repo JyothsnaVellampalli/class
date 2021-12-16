@@ -14,11 +14,11 @@ function api_data(url){
 
 
 function table_format(data){
-    for(i=0;i<data.length;i++){
+    for(let i=0;i<data.length;i++){
     let table=document.getElementById("viewport");
     let count=table.rows.length;
     let row=table.insertRow(count);
-    row.inserCell(0).innerHTML=data[i];
+    row.insertCell(0).innerHTML=data[i];
    }
 
 };
