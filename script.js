@@ -1,26 +1,8 @@
-const url="https://61b9ab5e38f69a0017ce61d3.mockapi.io/people";
-
-function api_data(url){
-    let request=new XMLHttpRequest();
-    request.open('GET', url, true);
-    request.onload=()=>{
-        let data=request.responseText;
-        console.log(data);
-        // document.getElementById("view").innerHTML=data;
-        table_format(data);
-    }
-    request.send();
-}
-
-
-function table_format(data){
-    for(let i=0;i<data.length;i++){
-    let table=document.getElementById("viewport");
-    let count=table.rows.length;
-    let row=table.insertRow(count);
-    row.insertCell(0).innerHTML=data[i];
-   }
-
-};
-
-api_data(url);
+const get_promise_burger=new Promise((good,bad)=>{
+  const rand_num=Math.ceil(Math.random()*100);
+  console.log(rand_num);
+  if(rand_num%2===0){good("Even")}
+  else{bad("Odd")};
+});
+get_promise_burger.then((msg)=>{console.log(msg)})
+              .catch((err)=>{console.log(err)});
